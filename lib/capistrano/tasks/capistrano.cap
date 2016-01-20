@@ -24,7 +24,8 @@ namespace :phoenix do
   task :build do
     on roles(fetch(:phoenix_role)), in: :sequence do
       within release_path  do
-        execute :mix, "do deps.get --only prod && MIX_ENV=prod mix compile && npm install && brunch build --production && MIX_ENV=prod mix phoenix.digest && MIX_ENV=prod mix ecto.migrate && MIX_ENV=prod mix release"
+        execute :mix, "do deps.get --only prod && MIX_ENV=prod mix compile && npm install && brunch build --production && MIX_ENV=prod mix phoenix.digest && MIX_ENV=prod mix release"
+        #execute :mix, "do deps.get --only prod && MIX_ENV=prod mix compile && npm install && brunch build --production && MIX_ENV=prod mix phoenix.digest && MIX_ENV=prod mix ecto.migrate && MIX_ENV=prod mix release"
       end
     end
   end
